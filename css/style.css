@@ -1,0 +1,525 @@
+/* FONTS */
+
+@font-face {
+	font-family: 'Circe';
+	src: url('Circe-Regular.eot');
+	src: local('Circe'), local('Circe-Regular'),
+		url('../fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Circe-Regular.woff') format('woff'),
+		url('../fonts/Circe-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('Circe-ExtraLight.eot');
+	src: local('Circe ExtraLight'), local('Circe-ExtraLight'),
+		url('../fonts/Circe-ExtraLight.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Circe-ExtraLight.woff') format('woff'),
+		url('../fonts/Circe-ExtraLight.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('Circe-Thin.eot');
+	src: local('Circe Thin'), local('Circe-Thin'),
+		url('../fonts/Circe-Thin.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Circe-Thin.woff') format('woff'),
+		url('../fonts/Circe-Thin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('Circe-Light.eot');
+	src: local('Circe Light'), local('Circe-Light'),
+		url('../fonts/Circe-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Circe-Light.woff') format('woff'),
+		url('../fonts/Circe-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('Circe-Bold.eot');
+	src: local('Circe Bold'), local('Circe-Bold'),
+		url('../fonts/Circe-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Circe-Bold.woff') format('woff'),
+		url('../fonts/Circe-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src: url('Circe-ExtraBold.eot');
+	src: local('Circe ExtraBold'), local('Circe-ExtraBold'),
+		url('../fonts/Circe-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Circe-ExtraBold.woff') format('woff'),
+		url('../fonts/Circe-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+/* MAIN */
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: Circe, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+main { /* Прижимание футера к низу*/
+	flex-grow: 1;
+}
+
+p {
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 2.3em;
+	font-weight: 900;
+	padding: 5px 0;
+	margin: 0;
+}
+
+h2 {
+	font-size: 24px;
+	margin: 20px 0;
+	margin-bottom: 10px;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 860px;
+	padding: 0 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+header {
+	background-color: #5199FF;
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+	animation: header-animation 1s 1s backwards ease;
+}
+
+.information p {
+	line-height: 24px;
+}
+
+.options-items {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.options,
+.options-2 {
+	border-left: 2px dashed #DF8600;
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+.option {
+	height: 60px;
+	border:  2px solid #DF8600;
+	border-radius: 5px;
+	text-align: center;
+	padding-top: 8px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.operations table label {
+	user-select: none;
+}
+
+/* СТИЛИЗАЦИЯ ЧЕКБОКСА */
+
+input[type="checkbox"]:checked, 
+input[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type="checkbox"]:checked + label, 
+input[type="checkbox"]:not(:checked) + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 11px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label::before, 
+input[type="checkbox"]:not(:checked) + label::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 1px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #dddddd;
+	background-color: #ffffff;
+	border-radius: 2px;
+}
+
+input[type="checkbox"]:checked + label::after, 
+input[type="checkbox"]:not(:checked) + label::after {
+    content: "";
+    position: absolute;
+	transition: all 0.2s ease;
+	left: -6px;
+    top: 2px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 3px solid rgb(194, 116, 0);
+	border-bottom: 3px solid rgb(194, 116, 0);
+    transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:not(:checked) + label::after {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+}
+
+/* ----------------------- */
+
+.diap {
+	width: 320px;
+}
+
+.diap table {
+	margin: auto;
+}
+
+.diap table td:nth-child(2) {
+	padding: 0 10px;
+	padding-top: 3px;
+}
+
+.amount {
+	width: 200px;
+}
+
+.amount table {
+	margin: auto;
+}
+
+.amount table td:first-child {
+	padding: 0 10px;
+	padding-top: 3px;
+}
+
+.operations {
+	width: 140px;
+}
+
+.operations table {
+	margin-left: 14px;
+}
+
+.operations table td {
+	padding: 4px;
+	padding-top: 7px;
+}
+
+.p-option {
+	padding: 0;
+	margin: 0;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.column {
+	font-size: 16px;
+	border: 2px solid black;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.l {
+	flex-basis: 49%;
+}
+
+.r {
+	flex-basis: 49%;
+}
+
+.right {
+	border-color: #41B619;
+	background-color: #C9FFBF;
+	/*margin-right: 10px;*/
+}
+
+input[type="checkbox"]
+
+.operations table label {
+	user-select: none;
+}
+
+input, 
+input:active, 
+input:focus {
+    outline: none;
+}
+
+input[type="text"] {
+	width: 30px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	transition: all 0.2s;
+}
+
+input[type="text"]:hover {
+	border-color: rgb(144, 188, 250);
+	transition: all 0.2;
+}
+
+input[type="text"]:focus {
+	border-color: rgb(27, 98, 199);
+	transition: all 0.2s;
+}
+
+#slider-range {
+	width: 180px;
+}
+
+#range {
+	width: 100px;
+}
+
+output {
+	display: inline-block;
+	width: 30px;
+	height: 23px;
+	margin: 0 5px 10px;
+	text-align: center;
+	vertical-align: center;
+	border: 1px solid #cccccc;
+ 	border-radius: 5px;
+}
+
+.error {
+	border-color: #B40A1B;
+	background-color: #FFDFDC;
+}
+
+.start,
+.restart {
+	margin-bottom: 20px;
+}
+
+.button-margin-right {
+	margin-right: 6px;
+}
+
+.start-text,
+.restart-text {
+	display: inline-block;
+	background-color: #FBE7B5;
+	border: 2px dashed #DF8600;
+	border-radius: 5px;
+	margin: 0;
+	padding: 20px;
+	font-weight: 500;
+}
+
+.start-button,
+.restart-button {
+	background-color: #FFAF50;
+	font-family: Circe, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	border: solid 1px #DF8600;
+	border-radius: 5px;
+	padding: 5px;
+	transition: all 0.2s;
+}
+
+.start-button:hover {
+	background-color: #FFCB8B;
+	transition: all 0.2s;
+}
+
+.start-button:active {
+	border-color: #4140423b;
+	color: #00000081;
+}
+
+.information,
+.answers,
+.restart h2 {
+	border-left: 2px dashed #DF8600;
+	padding-left: 20px;
+}
+.information h2 {
+	margin-bottom: 0;
+}
+
+.r-js,
+.e-js {
+	font-weight: bold;
+}
+ol {
+	text-align: left;
+	margin: 0;
+}
+
+li {
+	font-weight: bold;
+	padding-bottom: 16px;
+}
+
+li:first-child {
+	padding-top: 10px;
+}
+
+li:last-child {
+	padding-bottom: 0px;
+}
+
+.li {
+	font-weight: normal;
+}
+
+footer {
+	background-color: #5199FF;
+	padding: 7px 0;
+	margin-top: 30px;
+	opacity: 1;
+}
+
+footer p {
+	font-size: 14px;
+}
+
+footer a {
+	text-decoration: none;
+	background-color: rgba(45, 20, 87, 0.247);
+	color: black;
+	padding: 0 4px;
+	transition: all 0.3s;
+}
+
+footer a:hover {
+	background-color: #B7D4FF;
+	transition: all 0.3s;
+}
+
+.welcome-text {
+	position: fixed;
+	font-size: 70px;
+	font-weight: bold;
+	top: 300px;
+	left: auto;
+	opacity: 1;
+	animation: welcome-animation 500ms 1s forwards ease-out, welcome-display-animation 1ms 1500ms forwards;
+}
+
+@media (max-width: 550px) {
+	.r {
+		flex-basis: 100%;
+	}
+	
+	.l {
+		flex-basis: 100%;
+	}
+}
+
+@media (max-width: 777px) {
+	.start-text {
+		line-height: 40px;
+		padding-bottom: 30px;
+	}
+}
+
+/* ANIMATIONS */
+
+/* @keyframes header-animation {
+	from {
+		transform: translateY(-94px);
+	}
+}
+
+@keyframes footer-animation {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes welcome-animation {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes welcome-display-animation {
+	to {
+		transform: translateX(-1500px);
+	}
+}
+
+@keyframes block-animation {
+	from {
+		transform: translateX(-1500px);
+	}
+} */
+
+.welcome-text {
+	display: none;
+}
+
+.information {
+	animation: block-animation 1s 2s backwards cubic-bezier(.06,.49,.42,1.02);
+}
+
+.options {
+	animation: block-animation 1s 2.1s backwards cubic-bezier(.06,.49,.42,1.02);
+}
+
+.start-text {
+	animation: block-animation 1s 2.2s backwards cubic-bezier(.06,.49,.42,1.02);
+}
+
+.answers {
+	animation: block-animation 1s 2.3s backwards cubic-bezier(.06,.49,.42,1.02);
+}
+
+.flex {
+	animation: block-animation 1s 2.4s backwards cubic-bezier(.06,.49,.42,1.02);
+}
+
+footer {
+	animation: footer-animation 1s 2.6s backwards ease;
+}
