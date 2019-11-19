@@ -2,18 +2,14 @@ window.onload = function(){ // Когда подгрузится страниц�
     document.querySelector('.start-button').onclick = function(){ // в докум. найти этот класс и по клику вып. функ
         check();
     }
-	document.querySelector('.restart-button').onclick = function(){ // Как и на 2 сточке
-        check2();
-    }
+	//document.querySelector('.restart-button').onclick = function(){ // Как и на 2 сточке
+    //    check2();
+   // }
 }
 
 function check(){
-    var f = +document.getElementById("fn").value;
-    var s = +document.getElementById("sn").value;
     var operations = oproper();
-    if (f>s){
-        alert("Первое число диапазона должно быть меньше или равно второму!");
-    } else if(operations == '') {
+    if(operations == '') {
         alert("Вы не выбрали ни одного знака операции");
     } else {
         deleting();
@@ -46,7 +42,7 @@ function oproper() {
         operations.push("/")
     }
     if (document.getElementById("umnozhemie").checked){
-        operations.push("*");
+        operations.push("×");
     }
     return operations;
 }
@@ -63,7 +59,7 @@ function oproper2() {
         operations.push("/")
     }
     if (document.getElementById("umnozhemie2").checked){
-        operations.push("*");
+        operations.push("×");
     }
     return operations;
 }
@@ -97,7 +93,7 @@ function training(){
             res = x+y;
         } else if(op == "-"){
             res = x-y;
-        } else if(op == "*"){
+        } else if(op == "×"){
             res = x*y;
         } else{
             res = x/y;
@@ -167,7 +163,7 @@ function training(){
 }
 
 function training2(){
-    var x, y, i = 0, op, res, answer, answerStr, right = 0, error = 0, rights = [], errors = [], operations = ['+', '-', '*', '/'], amount
+    var x, y, i = 0, op, res, answer, answerStr, right = 0, error = 0, rights = [], errors = [], operations = ['+', '-', '×', '/'], amount
     //  1  2  иттер опер резул ответ странный.отв сч.прав.отв неправ /масс с прав отв\ неправ    массив с операциями
     
     //функции
@@ -186,7 +182,7 @@ function training2(){
             res = x+y;
         } else if(op == "-"){
             res = x-y;
-        } else if(op == "*"){
+        } else if(op == "×"){
             res = x*y;
         } else{
             res = x/y;

@@ -4,8 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Арифметический тренажер</title>
+	<link href="normalize.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 	<script src="script.js"></script>
+	
+	<!---------------------------------RANGE------------------------------>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="range.js"></script>
+	<!---------------------------------RANGE------------------------------>
+	
 </head>
 <body>
 	<header><h1>Арифметический тренажер</h1></header>
@@ -22,26 +31,38 @@
 			</div>
 			<div class="options">
 				<h2>Выбор</h2>
-				<form oninput="amountoutput.value=amountrange.value, first_number_output.value=first_number.value, second_number_output.value=second_number.value">
-					<div class="option diap">Вы будете получать числа в диапазоне:
-						<p class="p-option"><output name="first_number_output">3</output><input class="range" type="range" name="first_number" id="fn" min="1" max="20" step="1" value="3">
-						<input class="range" type="range" name="second_number" id="sn" min="1" max="20" step="1" value="15"><output name="second_number_output">15</output></p>
-					</div>
-					<div class="option amount">
-						Количество примеров:<input class="range" type="range" name="amountrange" id="amountrange" min="1" max="20" step="1" value="5"><output name="amountoutput">5</output>
-					</div>
-					<div class="option operations">
-						Знаки операции:
+				<div class="options-items">
+					<div class="option diap">
+						<label for="fn">Вы будете получать числа в диапазоне:</label>
 						<table>
 							<tr>
-								<td><input type="checkbox" checked name="plus" id="plus"><label for="plus">+</label></td>
-								<td><input type="checkbox" checked name="minus" id="minus"><label for="minus">-</label></td>
-								<td><input type="checkbox" checked name="chastnoe" id="chastnoe"><label for="chastnoe">/</label></td>
-								<td><input type="checkbox" checked name="umnozhenie" id="umnozhemie"><label for="umnozhemie">×</label></td>
+								<td><input type="text" id="fn"></td>
+								<td><div id="slider-range"></div></td>
+								<td><input type="text" id="sn"></td>
 							</tr>
 						</table>
 					</div>
-				</form>
+					<div class="option amount">
+						<label for="amountrange">Количество примеров:</label>
+						<table>
+							<tr>
+								<td><div id="range"></div></td>
+								<td><input type="text" id="amountrange"></td>
+							</tr>
+						</table>
+					</div>
+					<div class="option operations">
+						<label>Знаки операции:</label>
+						<table>
+							<tr>
+								<td><input type="checkbox" class="checkbox" checked name="plus" id="plus"><label for="plus">+</label></td>
+								<td><input type="checkbox" class="checkbox" checked name="minus" id="minus"><label for="minus">-</label></td>
+								<td><input type="checkbox" class="checkbox" checked name="chastnoe" id="chastnoe"><label for="chastnoe">/</label></td>
+								<td><input type="checkbox" class="checkbox" checked name="umnozhenie" id="umnozhemie"><label for="umnozhemie">×</label></td>
+							</tr>
+						</table>
+					</div>
+				</div>
 			</div>
 			<div class="start">
 				<p class="start-text">Чтобы начать прохождение тренажера, нажмите на эту кнопку:<span class="button-margin-right"></span><input class="start-button" type="button" value="Начать прохождение тренажера">
@@ -49,7 +70,7 @@
 			<div class="answers">
 				<h2>Ваши ответы</h2>
 			</div>
-			<div class="content clearfix flex">
+			<div class="content flex">
 				<div class="l">
 					<div class="column right clearfix">Правильные: <span class="r-js">0</span></div>
 					<div class="column right rights clearfix">Вы решили правильно:
@@ -63,6 +84,7 @@
 					</div>
 				</div>
 			</div>
+		<!-- REMAKE!!!
 			<div class="options-2 hidden">
 					<h2>Выбор</h2>
 					<form oninput="first_number_output.value=first_number.value, amountoutput.value=amountrange.value, second_number_output.value=second_number.value">
@@ -86,11 +108,13 @@
 						</div>
 					</form>
 			</div>
+
 			<div class="restart hidden">
 				<h2>Ещё раз</h2>
 				<p class="restart-text">Если вы хотите потренироваться ещё, то нажмите на эту кнопку:<span class="button-margin-right"></span><input class="restart-button" type="button" value="Пройти тренажер ещё раз"></p>
 			</div>
 		</div>
+	-->
 	</main>
 	<footer>
 		<div class="container">
