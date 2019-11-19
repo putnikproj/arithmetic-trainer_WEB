@@ -4,7 +4,7 @@ function check(){
         alert("Вы не выбрали ни одного знака операции");
     } else {
         var startDiv = document.querySelector(".start");
-        startDiv.classList.add('hidden');
+        startDiv.style.display = "none";
         setTimeout( training , 100);
     }
 }
@@ -28,7 +28,6 @@ function oproper() {
 
 function training(){
     var x, y, i = 0, op, res, answer, answerStr, right = 0, error = 0, rights = [], errors = [], amount
-    //  1  2  иттер опер резул ответ странный.отв сч.прав.отв неправ /масс с прав отв\ неправ    массив с операциями
     
     //функции
     
@@ -62,25 +61,26 @@ function training(){
 
     //функции
     var operations = oproper();
-    amount = document.getElementById("amountrange").value;
-    var f = +document.getElementById("fn").value;
-    var s = +document.getElementById("sn").value;
+    amount = document.getElementById("amount-range-number").value;
+    var f = +document.getElementById("first-range-number").value;
+    var s = +document.getElementById("second-range-number").value;
     
     //сам тренажер
     while(i != amount){
     i++;
-    x = random(f, s); //число напр 2
-    y = random(f, s); //число напр 3
-    op = operations[random(0, operations.length-1)]; //знак операции напр +
-    res = action(op); //результат напр 5
-	
-	do{ //проверка на правильность ответа
-		answerStr = prompt('№'+i+'.   '+x + op + y + " = ?"); //Запрос числа в пер 'странный ответ'
-		answer = +answerStr; //в ответ идет числовое значение странного ответа
+    x = random(f, s);
+    y = random(f, s);
+    op = operations[random(0, operations.length-1)];
+    res = action(op);
+    
+    //проверка на правильность ответа
+	do{
+		answerStr = prompt('№'+i+'.   '+x + op + y + " = ?");
+		answer = +answerStr;
 	}
-	while(answerStr == '' || isNaN(answer)) //Не выполняется, пока странный ответ равен null или ответ равен числу
+	while(answerStr == '' || isNaN(answer))
 	
-    if(answer.toFixed(1) == res.toFixed(1)){ //Подсчет правильных и непр ответов, внесение строк в массивы
+    if(answer.toFixed(1) == res.toFixed(1)){
         right++;
         rights.push(x + op + y +'='+restofix());
     } else{
@@ -90,27 +90,28 @@ function training(){
 }
     //сам тренажер
 
-	document.querySelector(".r-js").innerHTML = right; //в этот селектор вставить число правильных ответов
-    document.querySelector(".e-js").innerHTML = error; //неправильных
+	document.querySelector(".right-answers-count").innerHTML = right;
+    document.querySelector(".error-answers-count").innerHTML = error;
 	
-	var divRights = document.querySelector(".right-variants"); //присвоение переменной правильные варианты и их отчистка
+	var divRights = document.querySelector(".right-variants-list");
 	divRights.innerHTML = "";
 	
     for(i = 0; i < rights.length; i++){
-		divRights.innerHTML += ('<li><span class="li">' + rights[i] + '</span></li>'); //значения массива в тегах p
+		divRights.innerHTML += ('<li><span class="normal-text">' + rights[i] + '</span></li>');
 	}
 	
-	var divErrors = document.querySelector(".error-variants");
+	var divErrors = document.querySelector(".error-variants-list");
 	divErrors.innerHTML = "";
 	
     for(i = 0; i < errors.length; i++){
-		divErrors.innerHTML += ('<li><span class="li">' + errors[i] + '</span></li>');
+		divErrors.innerHTML += ('<li><span class="normal-text">' + errors[i] + '</span></li>');
     }
 	
     var start = document.querySelector(".start");
     var start_text = document.querySelector(".start-text");
     var start_button = document.querySelector(".start-button");
+    start.style.animation = "none";
     start_button.value = 'Пройти еще раз';
     start.innerHTML = '<p class="start-text">Чтобы пройти тренажер еще раз, нажмите на эту кнопку:<span class="button-margin-right"></span><input class="start-button" type="button" value="Пройти еще раз" OnClick="check();"></p>'
-    start.classList.remove('hidden');
+    start.style.display = "block";
 }

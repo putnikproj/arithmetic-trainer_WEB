@@ -6,91 +6,115 @@
 	<title>Арифметический тренажер</title>
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<script src="js/script.js"></script>
+	<script src="js/train.js"></script>
 	
-	<!---------------------------------RANGE------------------------------>
+	<!--FOR_RANGE-->
 	<link rel="stylesheet" href="css/jquety-ui.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery-ui.js"></script>
 	<script src="js/range.js"></script>
-	<!---------------------------------RANGE------------------------------>
-	
 </head>
 <body>
+	<!--================================================================-->
+	<!--HEADER-->
 	<header>
 		<h1>Арифметический тренажер</h1>
 	</header>
+	<!--END HEADER-->
+	<!--================================================================-->
+
+	
+	<!--================================================================-->
+	<!--MAIN-->
 	<main>
 		<div class="container">
+
+			<!--ONLY FOR ANIMATION-->
 			<div class="welcome-text">
 				Арифметический тренажер<br>
 				by Putnik
 			</div>
-			<div class="information">
-				<h2>Информация</h2>
+			<!--END ONLY FOR ANIMATION-->
+			
+			<section class="information">
+				<h2 style="margin-bottom: 0;">Информация</h2>
 				<p>Этот арифметический тренажер задаст выбранное кол-во примеров с рандомными выбранными знаками операции и числами в выбранном диапазоне.<br>
 				Если вы будете решать пример с делением не нацело, то ответ округляйте до 1 знака после запятой. Удачи!</p>
-			</div>
-			<div class="options">
-				<h2>Выбор</h2>
-				<div class="options-items">
-					<div class="option diap">
-						<label for="fn">Вы будете получать числа в диапазоне:</label>
+			</section>
+			<section class="settings">
+				<h2>Настройки</h2>
+				<article class="settings-items">
+					<!--1st-item-->
+					<div class="settings-item settings-range">
+						<label for="first-range-number">Вы будете получать числа в диапазоне:</label>
 						<table>
 							<tr>
-								<td><input type="text" id="fn"></td>
+								<td><input type="text" id="first-range-number"></td>
 								<td><div id="slider-range"></div></td>
-								<td><input type="text" id="sn"></td>
+								<td><input type="text" id="second-range-number"></td>
 							</tr>
 						</table>
 					</div>
-					<div class="option amount">
-						<label for="amountrange">Количество примеров:</label>
+					<!--2nd-item-->
+					<div class="settings-item settings-amount">
+						<label for="amount-range-number">Количество примеров:</label>
 						<table>
 							<tr>
 								<td><div id="range"></div></td>
-								<td><input type="text" id="amountrange"></td>
+								<td><input type="text" id="amount-range-number"></td>
 							</tr>
 						</table>
 					</div>
-					<div class="option operations">
+					<!--3rd-item-->
+					<div class="settings-item settings-operations">
 						<label>Знаки операции:</label>
 						<table>
 							<tr>
-								<td><input type="checkbox" class="checkbox" checked name="plus" id="plus"><label for="plus">+</label></td>
-								<td><input type="checkbox" class="checkbox" checked name="minus" id="minus"><label for="minus">-</label></td>
-								<td><input type="checkbox" class="checkbox" checked name="chastnoe" id="chastnoe"><label for="chastnoe">/</label></td>
-								<td><input type="checkbox" class="checkbox" checked name="umnozhenie" id="umnozhemie"><label for="umnozhemie">×</label></td>
+								<td><input type="checkbox" checked id="plus"><label for="plus">+</label></td>
+								<td><input type="checkbox" checked id="minus"><label for="minus">-</label></td>
+								<td><input type="checkbox" checked id="chastnoe"><label for="chastnoe">/</label></td>
+								<td><input type="checkbox" checked id="umnozhemie"><label for="umnozhemie">×</label></td>
 							</tr>
 						</table>
 					</div>
-				</div>
-			</div>
+				</article>
+			</section>
 			<div class="start">
-				<p class="start-text">Чтобы начать прохождение тренажера, нажмите на эту кнопку:<span class="button-margin-right"></span><input class="start-button" type="button" value="Начать прохождение тренажера" OnClick="check();"></p>
+				<p class="start-text">Чтобы начать прохождение тренажера, нажмите на эту кнопку:<span style="margin-right: 6px;"></span><input class="start-button" type="button" value="Начать прохождение тренажера" OnClick="check();"></p>
 			</div>
-			<div class="answers">
+			<section class="answers">
 				<h2>Ваши ответы</h2>
-			</div>
-			<div class="content flex">
-				<div class="l">
-					<div class="column right clearfix">Правильные: <span class="r-js">0</span></div>
-					<div class="column right rights clearfix">Вы решили правильно:
-						<ol class="right-variants"></ol>
-					</div>
+				<div class="content">
+					<article class="answers-block">
+						<div class="left-block">
+							<div class="column right-column">Правильные: <span class="right-answers-count" style="font-weight: bold;">0</span></div>
+							<div class="column right-column">Вы решили правильно:
+								<ol class="right-variants-list"></ol>
+							</div>
+						</div>
+						<div class="right-block">
+							<div class="column error-column">Неправильные: <span class="error-answers-count" style="font-weight: bold;">0</span></div>
+							<div class="column error-column">Вы ошиблись в:
+								<ol class="error-variants-list"></ol>
+							</div>
+						</div>
+					</article>
 				</div>
-				<div class="r">
-					<div class="column error">Неправильные: <span class="e-js">0</span></div>
-					<div class="column error errors">Вы ошиблись в:
-						<ol class="error-variants"></ol>
-					</div>
-				</div>
-			</div>
+			</section>
+
+		</div>
 	</main>
+	<!--END MAIN-->
+	<!--================================================================-->
+
+	<!--================================================================-->
+	<!--FOOTER-->
 	<footer>
 		<div class="container">
 			<p>Made by Putnik <a href="https://github.com/putnik-projects/arithmetic-trainer_WEB">GitHub</a></p>
 		</div>
 	</footer>
+	<!--END FOOTER-->
+	<!--================================================================-->
 </body>
 </html>
