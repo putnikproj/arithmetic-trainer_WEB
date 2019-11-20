@@ -4,15 +4,18 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Арифметический тренажер</title>
-	<link href="css/normalize.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<script src="js/train.js"></script>
-	
-	<!--FOR_RANGE-->
+
+	<!--FOR RANGE-->
 	<link rel="stylesheet" href="css/jquety-ui.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery-ui-touch-punch.js"></script>
 	<script src="js/range.js"></script>
+	<!--END FOR RANGE-->
+
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/train.js"></script>
 </head>
 <body>
 	<!--================================================================-->
@@ -30,10 +33,10 @@
 		<div class="container">
 
 			<!--ONLY FOR ANIMATION-->
-			<div class="welcome-text">
+			<span class="welcome-text">
 				Арифметический тренажер<br>
 				by Putnik
-			</div>
+			</span>
 			<!--END ONLY FOR ANIMATION-->
 			
 			<section class="information">
@@ -67,7 +70,7 @@
 					</div>
 					<!--3rd-item-->
 					<div class="settings-item settings-operations">
-						<label>Знаки операции:</label>
+						<label>Знаки операций:</label>
 						<table>
 							<tr>
 								<td><input type="checkbox" checked id="plus"><label for="plus">+</label></td>

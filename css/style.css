@@ -180,6 +180,14 @@ input[type="text"]:focus {
 	transition: all 0.2s;
 }
 
+.ui-slider .ui-slider-range {
+    background: #FBE7B5;
+}
+
+.ui-slider .ui-slider-handle {
+	width: 0.6em;
+}
+
 	/* END SETTINGS COMMON */
 
 .settings {
@@ -510,6 +518,18 @@ footer a:hover {
 	}
 }
 
+@media (max-width: 580px) {
+	span.welcome-text {
+		word-break: break-all;
+	}
+}
+
+@media (max-width: 440px) {
+	span.welcome-text {
+		top: 150px;
+	}
+}
+
 /* END MEDIA REQUESTS */
 
 /* END MAIN */
@@ -518,15 +538,15 @@ footer a:hover {
 
  @-webkit-keyframes header-animation {
 	from {
-		-webkit-transform: translateY(-94px);
-		        transform: translateY(-94px);
+		-webkit-transform: translateY(-140px);
+		        transform: translateY(-140px);
 	}
 }
 
  @keyframes header-animation {
 	from {
-		-webkit-transform: translateY(-94px);
-		        transform: translateY(-94px);
+		-webkit-transform: translateY(-140px);
+		        transform: translateY(-140px);
 	}
 }
 
