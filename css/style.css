@@ -518,12 +518,6 @@ footer a:hover {
 	}
 }
 
-@media (max-width: 580px) {
-	span.welcome-text {
-		word-break: break-all;
-	}
-}
-
 @media (max-width: 440px) {
 	span.welcome-text {
 		top: 150px;
