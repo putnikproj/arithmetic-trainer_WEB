@@ -90,6 +90,30 @@ function training(){
 }
     //сам тренажер
 
+    var progress_ok = document.querySelector(".progress-answered-ok");
+    var progress_bad = document.querySelector(".progress-answered-bad");
+    progress_ok.classList.remove('progress-answered-bad-0');
+    progress_bad.classList.remove('progress-answered-ok-0');
+
+    if (right != 0){
+        progress_ok.textContent = ((100/(error+right))*right).toFixed(1)+"%";
+        progress_ok.style.width = (100/(error+right))*right+"%";
+    }
+    else {
+        progress_ok.textContent = "";
+        progress_ok.style.width = 0+"%";
+        progress_bad.classList.add('progress-answered-ok-0');
+    }
+    if (error != 0){
+        progress_bad.textContent = ((100/(error+right))*error).toFixed(1)+"%";
+        progress_bad.style.width = (100/(error+right))*error+"%";
+    }
+    else {
+        progress_bad.textContent = "";
+        progress_bad.style.width = 0+"%";
+        progress_ok.classList.add('progress-answered-bad-0');
+    }
+
 	document.querySelector(".right-answers-count").innerHTML = right;
     document.querySelector(".error-answers-count").innerHTML = error;
 	

@@ -394,6 +394,46 @@ input[type="checkbox"]:checked + label::after {
 
 /* ANSWERS */
 
+.progress-not-answered {
+	background-color: rgb(226, 230, 231);
+	height: 15px;
+	width: 100%;
+	margin: 10px 0;
+	border-radius: 10px;
+}
+
+.progress-answered-ok {
+	background-color: #35D073;
+	height: inherit;
+	border-top-left-radius: inherit;
+	border-bottom-left-radius: inherit;
+	width: 0%;
+	float: left;
+	text-align: center;
+	transition: all 1s;
+}
+
+.progress-answered-bad {
+	background-color: rgb(235, 90, 82);
+	height: inherit;
+	border-top-right-radius: inherit;
+	border-bottom-right-radius: inherit;
+	float: right;
+	width: 0%;
+	text-align: center;
+	transition: all 1s;
+}
+
+.progress-answered-ok-0 {
+	border-top-left-radius: inherit;
+	border-bottom-left-radius: inherit;
+}
+
+.progress-answered-bad-0 {
+	border-top-right-radius: inherit;
+	border-bottom-right-radius: inherit;
+}
+
 .answers-block {
 	display: -webkit-box;
 	display: -webkit-flex;
