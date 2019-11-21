@@ -136,6 +136,6 @@ function training(){
     var start_button = document.querySelector(".start-button");
     start.style.animation = "none";
     start_button.value = 'Пройти еще раз';
-    start.innerHTML = '<p class="start-text">Чтобы пройти тренажер еще раз, нажмите на эту кнопку:<span class="button-margin-right"></span><input class="start-button" type="button" value="Пройти еще раз" OnClick="check();"></p>'
+    start.innerHTML = '<p class="start-text">Чтобы пройти тренажер еще раз, нажмите на эту кнопку:<span style="margin-right: 6px;"></span><input class="start-button" type="button" value="Пройти еще раз" OnClick="check();"></p>'
     start.style.display = "block";
 }

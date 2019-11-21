@@ -955,6 +955,7 @@ a:visited.ui-button,
 	background: #ededed;
 	font-weight: normal;
 	color: #2b2b2b;
+	outline: none;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
@@ -980,6 +981,7 @@ a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
 	border: 1px solid #DF8600;
+	outline: none;
 	background: #FFAF50;
 	font-weight: normal;
 	color: #ffffff;
